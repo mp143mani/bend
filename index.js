@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
-const router = require("./routes/router");
-const dotenv = require("dotenv"); // Add this line
+const router = require("./routes/Studentroutes");
+const dotenv = require("dotenv"); 
 
-dotenv.config(); // Add this line to load the environment variables
+dotenv.config(); 
 
 app.get("/", (req, res) => {
     res.send("Server is running on port " + port);
@@ -15,8 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use(router);
 
-// Access environment variables
-const port = process.env.PORT || 5000; // Default to 5000 if PORT is not specified in .env
+
+const port = process.env.PORT || 5000; 
 const dbUrl = process.env.DB_URL;
 const dbName = process.env.DB_NAME;
 

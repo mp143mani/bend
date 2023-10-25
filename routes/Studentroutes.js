@@ -1,9 +1,9 @@
 const express=require("express");
 const router = express.Router();
-const students=require("../models/studSchema");
+const students=require("../schema/studSchema");
 
 
-//send data post method
+
 router.post("/addstud",async(req,res)=>{
     const {name,address,subject,contact}=req.body;
 
@@ -27,7 +27,7 @@ router.post("/addstud",async(req,res)=>{
     }
 });
 
-//get student Data
+
 router.get("/getstud", async(req,res)=>{
     try{
         const studdata= await students.find();
@@ -49,7 +49,7 @@ router.get("/getstud/:id", async(req,res)=>{
 })
 
 
-//Delete student Data
+
 router.delete("/deletestud/:id", async(req,res)=>{
     try{
        const {id} = req.params;
@@ -60,7 +60,7 @@ router.delete("/deletestud/:id", async(req,res)=>{
     }
 })
 
-// update student data
+
 router.patch("/updatestud/:id",async(req,res)=>{
     try {
         const {id} = req.params;
