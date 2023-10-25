@@ -6,6 +6,10 @@ const dotenv = require("dotenv"); // Add this line
 
 dotenv.config(); // Add this line to load the environment variables
 
+app.get("/", (req, res) => {
+    res.send("Server is running on port " + port);
+});
+
 var cors = require("cors");
 app.use(cors());
 app.use(express.json());
